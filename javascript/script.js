@@ -18,6 +18,7 @@ let inputField = document.getElementById("search__input");
 // Starting the search for images
 inputField.addEventListener('keydown', async (event) => {
   if (event.keyCode == 13 && inputField.value != "") {
+    event.preventDefault();
     document.getElementById("gallery").style.display = "grid";
     let imageArray = await getData(getInputValue, getNumberOfImages);
     createImages(imageArray);
@@ -91,11 +92,6 @@ let closeImage = lightBox => {
     lightBox.remove();
   });
 };
-
-
-
-
-
 
 
 

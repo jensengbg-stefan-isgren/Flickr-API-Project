@@ -7,8 +7,8 @@ export let getData = async (inputValue, images) => {
   const TEXT = "&text=";
   const SORT_RELEVANCE = "&sort=relevance";
   const PER_PAGE = "&per_page=";
-
   let url = `${BASE_API_URL}${API_KEY}${METHOD}${FORMAT}${TEXT}${inputValue()}${SORT_RELEVANCE}${PER_PAGE}${images()}`;
+  console.log(url)
   let response = await fetch(url, {
     method: "GET"
   });
